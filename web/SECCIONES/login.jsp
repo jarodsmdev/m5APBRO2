@@ -19,25 +19,32 @@
         <nav>
             <%@include file="COMPONENTES/navbar.jsp" %>
         </nav>
-        <h1>Login</h1>
-    </body>
-     <p>
-    <form  method="POST">
-      <div class="form-floating mb-3">
-        <input type="text" class="form-control" placeholder="Introduce nombre" name="user">
-         <label for="nombre">Usuario:</label>
-      </div>
-
-      <div class="form-floating mb-3">
-        <input type="password" class="form-control" placeholder="Introduce contraseña" name="pass" id="pwd" autocomplete="off">
-        <label for="pwd">Contraseña:</label>
-      </div>
-
+      </body>
       
-      <div>
-        <button type="submit" class="btn btn-primary mb-3">Entrar</button>
-      </div>
-    </form>
+      <h1 class="text-center py-3">Login</h1>
+
+      <form  method="POST">
+
+        <div class="row justify-content-center">
+          <div class="col-6">
+            <div class="form-floating mb-3">
+              <input type="text" class="form-control" placeholder="Introduce nombre" name="user">
+               <label for="nombre">Usuario:</label>
+            </div>
+            
+            <div class="form-floating mb-3">
+              <input type="password" class="form-control" placeholder="Introduce contraseña" name="pass" id="pwd" autocomplete="off">
+              <label for="pwd">Contraseña:</label>
+            </div>
+            
+            <div class="border">
+              <button type="submit" class="btn btn-primary mb-3 w-50">Entrar</button>
+            </div>
+          </div>
+        </div>
+
+      </form>
+
 
     <p class="text-center">¿No tiene una cuenta?, Contacta con el administrador de Sistemas.</p>
         
