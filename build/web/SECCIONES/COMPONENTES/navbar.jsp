@@ -29,16 +29,15 @@
           <li class="nav-item">
             <a class="nav-link" href="SvListarCapacitacion">Lista de Capacitaciones</a>
           </li>
-          <!-- <li class="nav-item dropdown">
+          <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Dropdown link
+              Menú Usuario
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
+              <li><a class="dropdown-item" href="#">Configuración</a></li>
+              <li><a class="dropdown-item" href="#">Cerrar Sesión</a></li>
             </ul>
-          </li> -->
+          </li>
         </ul>
       </div>
     </div>

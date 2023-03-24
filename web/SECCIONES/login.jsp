@@ -23,15 +23,14 @@
     </body>
      <p>
     <form  method="POST">
-      <div class="form-group">
-        <label for="nombre">Usuario:</label>
+      <div class="form-floating mb-3">
         <input type="text" class="form-control" placeholder="Introduce nombre" name="user">
+         <label for="nombre">Usuario:</label>
       </div>
 
       <div class="form-floating mb-3">
-        <input type="password" class="form-control" placeholder="Introduce contraseña" name="password" id="pwd" autocomplete="off">
+        <input type="password" class="form-control" placeholder="Introduce contraseña" name="pass" id="pwd" autocomplete="off">
         <label for="pwd">Contraseña:</label>
-        <input type="password" class="form-control" placeholder="Introduce contraseña" name="pass">
       </div>
 
       
