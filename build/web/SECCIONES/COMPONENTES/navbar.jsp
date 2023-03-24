@@ -18,6 +18,9 @@
               <a class="nav-link active" aria-current="page" href="SvInicio">Inicio</a>
           </li>
           <li class="nav-item">
+            <a class="nav-link" href="SvLogin">Login</a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" href="SvContacto">Contacto</a>
           </li>
           <li class="nav-item">

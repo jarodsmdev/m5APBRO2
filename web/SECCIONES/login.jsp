@@ -24,14 +24,14 @@
         <h1>Login</h1>
     </body>
      <p>
-    <form  method="post">
+    <form  method="POST">
       <div class="form-group">
         <label for="nombre">Usuario:</label>
-        <input type="text" class="form-control" placeholder="Introduce nombre" name="nombre" id="nombre">
+        <input type="text" class="form-control" placeholder="Introduce nombre" name="user">
       </div>
       <div class="form-group">
         <label for="pwd">Contraseña:</label>
-        <input type="password" class="form-control" placeholder="Introduce contraseña" name="password">
+        <input type="password" class="form-control" placeholder="Introduce contraseña" name="pass">
       </div>
         <div>
       <button type="submit" class="btn btn-primary">Entrar</button>
