@@ -12,6 +12,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -59,10 +60,8 @@ public class SvContacto extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         //processRequest(request, response);
-        
-        //obtener una instancia del objeto RequestDispatcher
-        RequestDispatcher dispatcher = request.getRequestDispatcher("SECCIONES/contacto.jsp");
-        //redirigir la solicitud a la pagina JSP
+
+        RequestDispatcher dispatcher = request.getRequestDispatcher("SECCIONES/login.jsp");
         dispatcher.forward(request, response);
     }
 
@@ -77,7 +76,17 @@ public class SvContacto extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        //processRequest(request, response);
+        
+        HttpSession sesion = request.getSession();
+        if (sesion.getAttribute("nombre").equals("mauricio")) {
+            RequestDispatcher dispatcher = request.getRequestDispatcher("SECCIONES/contacto.jsp");
+            dispatcher.forward(request, response);
+        }
+        else {
+            RequestDispatcher dispatcher = request.getRequestDispatcher("SECCIONES/login.jsp");
+            dispatcher.forward(request, response);
+        }
     }
 
     /**

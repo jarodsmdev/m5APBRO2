@@ -12,6 +12,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -59,11 +60,19 @@ public class SvCapacitacion extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         //processRequest(request, response);
+        //RequestDispatcher dispatcher = request.getRequestDispatcher("SECCIONES/login.jsp");
+        //dispatcher.forward(request, response);
         
-        //obtener una instancia del objeto RequestDispatcher
-        RequestDispatcher dispatcher = request.getRequestDispatcher("SECCIONES/capacitacion.jsp");
-        //redirigir la solicitud a la pagina JSP
-        dispatcher.forward(request, response);
+                HttpSession sesion = request.getSession();
+        if (sesion.getAttribute("nombre") == null) {
+            RequestDispatcher dispatcher = request.getRequestDispatcher("SECCIONES/login.jsp");
+            //dispatcher.forward(request, response);
+            request.getRequestDispatcher("SECCIONES/login.jsp");
+        }
+        else {
+            RequestDispatcher dispatcher = request.getRequestDispatcher("SECCIONES/capacitacion.jsp");
+            dispatcher.forward(request, response);
+        }
     }
 
     /**
@@ -77,7 +86,11 @@ public class SvCapacitacion extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        //processRequest(request, response);
+        RequestDispatcher dispatcher = request.getRequestDispatcher("SECCIONES/login.jsp");
+        dispatcher.forward(request, response);
+
+        
     }
 
     /**
