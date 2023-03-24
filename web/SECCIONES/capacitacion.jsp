@@ -10,7 +10,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-        <title>JSP Page</title>
+        <title>Capacitación</title>
     </head>
     <body class="container">
         <nav>
@@ -21,14 +21,14 @@
             <h2 class="text-center py-3">Crear Capacitación<h2>
                 
                 <form action="" method="POST">
-                    <div>
+
+                    <div class="form-floating mb-3">
+                        <input type="text" required class="form-control" placeholder="Rut Cliente" name="rut">
                         <label for="rutCliente">RUT Cliente:</label>
-                        <input type="text" required class="form-control" placeholder="Rut Cliente">
                     </div>
     
-                    <div>
-                        <label for="diaSemana">Día Semana:</label>
-                        <select name="" id="diaSemana" class="form-select" required>
+                    <div class="form-floating mb-3">
+                        <select name="diaSemana" id="diaSemana" class="form-select" required id="diaSemana">
                             <option selected>Seleccione un día</option>
                             <option value="1">Lunes</option>
                             <option value="2">Martes</option>
@@ -38,32 +38,32 @@
                             <option value="6">Sábado</option>
                             <option value="7">domingo</option>
                         </select>
+                        <label for="diaSemana">Día Semana:</label>
                     </div>
     
-                    <div>
-                        <label for="">Hora:</label>
-                        <input type="text" maxlength="5" class="form-control" placeholder="Hora">
+                    <div class="form-floating mb-3">
+                        <input type="text" maxlength="5" class="form-control" placeholder="Hora" id="hora" name="hora">
+                        <label for="hora">Hora:</label>
                     </div>
     
-                    <div>
-                        <label for="">Lugar:</label>
-                        <input type="text" class="form-control" required minlength="10" maxlength="50" placeholder="Lugar">
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" required minlength="10" maxlength="50" placeholder="Lugar" id="lugar" name="lugar">
+                        <label for="lugar">Lugar:</label>
                     </div>
     
-                    <div>
-                        <label for="">Duración:</label>
-                        <input type="text" class="form-control" maxlength="70" placeholder="Duración">
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" maxlength="70" placeholder="Duración" id="duracion" name="duracion">
+                        <label for="duracion">Duración:</label>
                     </div>
     
-                    <div>
-                        <label for="">Cantidad de Asistentes</label>
-                        <input type="text" class="form-control" required placeholder="Cantidad de Asistentes">
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" required placeholder="Cantidad de Asistentes" id="cantAsistentes" name="cantAsistentes">
+                        <label for="cantAsistentes">Cantidad de Asistentes:</label>
                     </div>
     
-                    <div>
-                        <input type="submit" value="Crear Capacitación" class="btn btn-primary">
-                    </div>
-                    
+                   
+                    <input type="submit" value="Crear Capacitación" class="btn btn-primary">
+                      
                 </form>
         </main>
 

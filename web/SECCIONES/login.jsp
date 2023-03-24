@@ -12,32 +12,38 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
         <title>JSP Page</title>
         <style>
-            h1 {text-align: center;}
-            p {text-align: center;}
-            div {text-align: center;}
+
         </style>
     </head>
     <body class="container">
         <nav>
             <%@include file="COMPONENTES/navbar.jsp" %>
         </nav>
-        <h1>Login</h1>
-    </body>
-     <p>
-    <form  method="post">
-      <div class="form-group">
+        <h2 class="text-center p-3">Login</h2>
+        
+    <form method="POST">
+
+      <div class="form-floating mb-3">
+        <input type="text" class="form-control" placeholder="Introduce nombre usuario" name="nombre" id="nombre" autocomplete="off">
         <label for="nombre">Usuario:</label>
-        <input type="text" class="form-control" placeholder="Introduce nombre" name="nombre" id="nombre">
       </div>
-      <div class="form-group">
+
+      <div class="form-floating mb-3">
+        <input type="password" class="form-control" placeholder="Introduce contraseña" name="password" id="pwd" autocomplete="off">
         <label for="pwd">Contraseña:</label>
-        <input type="password" class="form-control" placeholder="Introduce contraseña" name="password">
       </div>
-        <div>
-      <button type="submit" class="btn btn-primary">Entrar</button>
+
+      
+      <div>
+        <button type="submit" class="btn btn-primary mb-3">Entrar</button>
       </div>
     </form>
-    </p>
+
+    <p class="text-center">¿No tiene una cuenta?, Contacta con el administrador de Sistemas.</p>
+        
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    </body>
+
     <footer class="py-3">
         <%@include file="COMPONENTES/footer.jsp" %>
     </footer>
