@@ -21,6 +21,7 @@ import javax.servlet.http.HttpSession;
  */
 @WebServlet(name = "SvLogin", urlPatterns = {"/SvLogin"})
 public class SvLogin extends HttpServlet {
+   
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -87,10 +88,12 @@ public class SvLogin extends HttpServlet {
             dispatcher.forward(request, response);
         }
         else {
-            HttpSession sesion=request.getSession();
+            HttpSession sesion = request.getSession();
             sesion.setAttribute("nombre", user);
-            RequestDispatcher dispatcher = request.getRequestDispatcher("SECCIONES/contacto.jsp");
-            dispatcher.forward(request, response);
+            //RequestDispatcher dispatcher = request.getRequestDispatcher("SECCIONES/contacto.jsp");
+            //dispatcher.forward(request, response);
+            response.sendRedirect("contacto.jsp");
+            
         }
     }
 
