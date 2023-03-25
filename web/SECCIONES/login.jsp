@@ -23,6 +23,17 @@
       
       <h1 class="text-center py-3">Login</h1>
 
+      <% String mensajeError = request.getAttribute("mensajeError") != null ? request.getAttribute("mensajeError").toString() : ""; %>
+
+      <% if (mensajeError != null && !mensajeError.isEmpty()) { %>
+         <div class="alert alert-danger alert-dismissible fade show" role="alert" id="mensajeError">
+             <strong>¡Error!</strong> <%= mensajeError %>
+             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+         </div>
+      <% } %>
+
+      
+
       <form action="${pageContext.request.contextPath}/SvLogin" method="POST">
 
         <div class="row justify-content-center">
@@ -49,7 +60,8 @@
     <p class="text-center">¿No tiene una cuenta?, Contacta con el administrador de Sistemas.</p>
         
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-    </body>
+        <script src="assets/js/main.js"></script>
+      </body>
 
     <footer class="py-3">
         <%@include file="COMPONENTES/footer.jsp" %>

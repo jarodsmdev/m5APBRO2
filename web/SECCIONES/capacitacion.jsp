@@ -19,7 +19,7 @@
         
         <main>
             
-            <h2 class="text-center py-3">Capacitacion</h2>
+            <h2 class="text-center py-3">Crear Capacitación</h2>
                 
                 <form action="" method="POST">
 

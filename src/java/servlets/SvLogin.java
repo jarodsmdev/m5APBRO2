@@ -92,15 +92,13 @@ public class SvLogin extends HttpServlet {
     String pass = request.getParameter("pass");
 
         if (user == null || pass == null || !validar(user, pass)) {
-            //RequestDispatcher dispatcher = request.getRequestDispatcher("SECCIONES/login.jsp");
-            //dispatcher.forward(request, response);
-            response.sendRedirect("SECCIONES/login.jsp");
+            request.setAttribute("mensajeError", "Credenciales inválidas.");
+            //response.sendRedirect("SECCIONES/login.jsp");
+            request.getRequestDispatcher("SECCIONES/login.jsp").forward(request, response);
         }
         else {
             HttpSession sesion = request.getSession();
             sesion.setAttribute("nombre", user);
-            //RequestDispatcher dispatcher = request.getRequestDispatcher("SECCIONES/contacto.jsp");
-            //dispatcher.forward(request, response);
             response.sendRedirect("SECCIONES/contacto.jsp");
             
         }

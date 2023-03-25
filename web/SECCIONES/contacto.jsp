@@ -20,7 +20,7 @@
         
         <main>
             
-            <h2 class="text-center py-3">CONTACTO</h2>
+            <h2 class="text-center py-3">Contacto</h2>
         
             <form action="" method="POST">
 
