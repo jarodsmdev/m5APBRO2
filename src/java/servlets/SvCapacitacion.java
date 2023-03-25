@@ -59,17 +59,15 @@ public class SvCapacitacion extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        //processRequest(request, response);
-        //RequestDispatcher dispatcher = request.getRequestDispatcher("SECCIONES/login.jsp");
-        //dispatcher.forward(request, response);
         
-                HttpSession sesion = request.getSession();
-        if (sesion.getAttribute("nombre") == null) {
-            RequestDispatcher dispatcher = request.getRequestDispatcher("SECCIONES/login.jsp");
-            //dispatcher.forward(request, response);
-            request.getRequestDispatcher("SECCIONES/login.jsp");
+        HttpSession session = request.getSession();
+        
+        if(session.getAttribute("nombre") == null){
+            response.sendRedirect(request.getContextPath() + "/SvLogin");
         }
         else {
+            //response.sendRedirect(request.getContextPath() + "/SvCapacitacion");
+            //response.sendRedirect("SvCapacitacion");
             RequestDispatcher dispatcher = request.getRequestDispatcher("SECCIONES/capacitacion.jsp");
             dispatcher.forward(request, response);
         }
@@ -86,9 +84,9 @@ public class SvCapacitacion extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        //processRequest(request, response);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("SECCIONES/login.jsp");
-        dispatcher.forward(request, response);
+        
+        processRequest(request, response);
+ 
 
         
     }

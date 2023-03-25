@@ -23,7 +23,7 @@
       
       <h1 class="text-center py-3">Login</h1>
 
-      <form  method="POST">
+      <form action="${pageContext.request.contextPath}/SvLogin" method="POST">
 
         <div class="row justify-content-center">
           <div class="col-6">
@@ -37,7 +37,7 @@
               <label for="pwd">Contraseña:</label>
             </div>
             
-            <div class="border">
+            <div>
               <button type="submit" class="btn btn-primary mb-3 w-50">Entrar</button>
             </div>
           </div>

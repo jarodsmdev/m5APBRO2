@@ -59,11 +59,21 @@ public class SvContacto extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        //processRequest(request, response);
 
-        RequestDispatcher dispatcher = request.getRequestDispatcher("SECCIONES/login.jsp");
-        dispatcher.forward(request, response);
+        HttpSession session = request.getSession();
+        
+        if(session.getAttribute("nombre") == null){
+            response.sendRedirect(request.getContextPath() + "/SvLogin");
+        }
+        else {
+            //response.sendRedirect(request.getContextPath() + "/SvContacto");
+            //response.sendRedirect("SvContacto");
+            RequestDispatcher dispatcher = request.getRequestDispatcher("SECCIONES/contacto.jsp");
+            dispatcher.forward(request, response);
+        }
+     
     }
+    
 
     /**
      * Handles the HTTP <code>POST</code> method.
@@ -76,17 +86,10 @@ public class SvContacto extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        //processRequest(request, response);
         
-        HttpSession sesion = request.getSession();
-        if (sesion.getAttribute("nombre").equals("mauricio")) {
-            RequestDispatcher dispatcher = request.getRequestDispatcher("SECCIONES/contacto.jsp");
-            dispatcher.forward(request, response);
-        }
-        else {
-            RequestDispatcher dispatcher = request.getRequestDispatcher("SECCIONES/login.jsp");
-            dispatcher.forward(request, response);
-        }
+        processRequest(request, response);
+        
+        
     }
 
     /**

@@ -12,6 +12,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -58,8 +59,18 @@ public class SvListarCapacitacion extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        RequestDispatcher dispatcher = request.getRequestDispatcher("SECCIONES/listarCapacitacion.jsp");
-        dispatcher.forward(request, response);
+       
+        HttpSession session = request.getSession();
+        
+        if(session.getAttribute("nombre") == null){
+            response.sendRedirect(request.getContextPath() + "/SvLogin");
+        }
+        else {
+            //response.sendRedirect(request.getContextPath() + "/SvListarCapacitacion");
+            RequestDispatcher dispatcher = request.getRequestDispatcher("SECCIONES/listarCapacitacion.jsp");
+            dispatcher.forward(request, response);
+        }
+
     }
 
     /**

@@ -61,8 +61,18 @@ public class SvLogin extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        RequestDispatcher dispatcher = request.getRequestDispatcher("SECCIONES/login.jsp");
-        dispatcher.forward(request, response);
+
+        HttpSession session = request.getSession();
+        
+        if(session.getAttribute("nombre") != null){
+            //SI EXISTE, ELIMINAR EL ATRIBUTO
+            session.removeAttribute("nombre");
+            response.sendRedirect("SvContacto");
+        }
+        else{
+            response.sendRedirect("SECCIONES/login.jsp");
+        }
+
 
     }
     /**
@@ -80,19 +90,18 @@ public class SvLogin extends HttpServlet {
                
     String user = request.getParameter("user");
     String pass = request.getParameter("pass");
-    System.out.println("user:" + user);
-    System.out.println("pass:" + pass);
 
         if (user == null || pass == null || !validar(user, pass)) {
-            RequestDispatcher dispatcher = request.getRequestDispatcher("SECCIONES/login.jsp");
-            dispatcher.forward(request, response);
+            //RequestDispatcher dispatcher = request.getRequestDispatcher("SECCIONES/login.jsp");
+            //dispatcher.forward(request, response);
+            response.sendRedirect("SECCIONES/login.jsp");
         }
         else {
             HttpSession sesion = request.getSession();
             sesion.setAttribute("nombre", user);
             //RequestDispatcher dispatcher = request.getRequestDispatcher("SECCIONES/contacto.jsp");
             //dispatcher.forward(request, response);
-            response.sendRedirect("contacto.jsp");
+            response.sendRedirect("SECCIONES/contacto.jsp");
             
         }
     }
