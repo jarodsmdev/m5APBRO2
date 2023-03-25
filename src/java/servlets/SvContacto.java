@@ -12,6 +12,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -58,13 +59,21 @@ public class SvContacto extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        //processRequest(request, response);
+
+        HttpSession session = request.getSession();
         
-        //obtener una instancia del objeto RequestDispatcher
-        RequestDispatcher dispatcher = request.getRequestDispatcher("SECCIONES/contacto.jsp");
-        //redirigir la solicitud a la pagina JSP
-        dispatcher.forward(request, response);
+        if(session.getAttribute("nombre") == null){
+            response.sendRedirect(request.getContextPath() + "/SvLogin");
+        }
+        else {
+            //response.sendRedirect(request.getContextPath() + "/SvContacto");
+            //response.sendRedirect("SvContacto");
+            RequestDispatcher dispatcher = request.getRequestDispatcher("SECCIONES/contacto.jsp");
+            dispatcher.forward(request, response);
+        }
+     
     }
+    
 
     /**
      * Handles the HTTP <code>POST</code> method.
@@ -77,7 +86,10 @@ public class SvContacto extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        
         processRequest(request, response);
+        
+        
     }
 
     /**

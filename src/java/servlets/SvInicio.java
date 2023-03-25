@@ -12,6 +12,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -58,12 +59,9 @@ public class SvInicio extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        //processRequest(request, response);
         
-        //obtener una instancia del objeto RequestDispatcher
-        RequestDispatcher dispatcher = request.getRequestDispatcher("index.jsp");
-        //redirigir la solicitud a la pagina JSP
-        dispatcher.forward(request, response);
+        //processRequest(request, response);
+        response.sendRedirect("index.jsp");
     }
 
     /**

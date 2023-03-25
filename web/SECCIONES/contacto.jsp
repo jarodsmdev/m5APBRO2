@@ -20,23 +20,23 @@
         
         <main>
             
-            <h2 class="text-center py-3">CONTACTO</h2>
+            <h2 class="text-center py-3">Contacto</h2>
         
             <form action="" method="POST">
 
-                <div>
-                    <label for="email">Email:</label>
+                <div class="form-floating mb-3">
                     <input type="email" name="email" id="email" class="form-control" placeholder="Email">
+                    <label for="email">Email:</label>
                 </div>
 
-                <div>
-                    <label for="nombre">Nombre:</label>
+                <div class="form-floating mb-3">
                     <input type="text" name="name" id="nombre" class="form-control" placeholder="Nombre de Contacto">
+                    <label for="nombre">Nombre:</label>
                 </div>
 
-                <div>
+                <div class="form-floating mb-3">
+                    <textarea name="comentarios" id="comentarios" cols="30" rows="10" class="form-control" placeholder="Escriba sus comentarios aquí" style="height: 100px; resize:none "></textarea>
                     <label for="comentarios">Comentarios:</label>
-                    <textarea name="comentarios" id="comentarios" cols="30" rows="10" class="form-control" placeholder="Escriba sus comentarios aquí"></textarea>
                 </div>
 
                 <div>

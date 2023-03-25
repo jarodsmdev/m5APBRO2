@@ -16,15 +16,20 @@
         <nav>
             <%@include file="COMPONENTES/navbar.jsp" %>
         </nav>
-        <h1>Listas Capacitaciones</h1>
+
+        <main>
+            <h1>Listas Capacitaciones</h1>
+            
+            <ul>
+                <li>Capacitacion N°1</li>
+                <li>Capacitacion N°2</li>
+                <li>Capacitacion N°3</li>
+            </ul>
+        </main>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
     </body>
-    <main>
-        <ul>
-            <li>Capacitacion N°1</li>
-            <li>Capacitacion N°2</li>
-            <li>Capacitacion N°3</li>
-        </ul>
-    </main>
+
     <footer class="py-3">
         <%@include file="COMPONENTES/footer.jsp" %>
     </footer>
