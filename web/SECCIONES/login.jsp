@@ -15,13 +15,9 @@
 
         </style>
     </head>
-    <body class="container">
-        <nav>
-            <%@include file="COMPONENTES/navbar.jsp" %>
-        </nav>
-      </body>
+
       
-      <h1 class="text-center py-3">Login</h1>
+      <h1 class="text-center py-5">Login</h1>
 
       <% String mensajeError = request.getAttribute("mensajeError") != null ? request.getAttribute("mensajeError").toString() : ""; %>
 
@@ -63,7 +59,5 @@
         <script src="assets/js/main.js"></script>
       </body>
 
-    <footer class="py-3">
-        <%@include file="COMPONENTES/footer.jsp" %>
-    </footer>
+
 </html>

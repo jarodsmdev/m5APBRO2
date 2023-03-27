@@ -18,13 +18,40 @@
         </nav>
 
         <main>
-            <h1>Listas Capacitaciones</h1>
+            <h1 class="text-center py-3">Listar Capacitaciones</h1>
             
-            <ul>
-                <li>Capacitacion N°1</li>
-                <li>Capacitacion N°2</li>
-                <li>Capacitacion N°3</li>
-            </ul>
+            <table class="table table-sm table-hover">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>RUT Cliente</th>
+                        <th>Día</th>
+                        <th>Lugar</th>
+                        <th>Duración</th>
+                        <th>Cantidad</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <th>1</th>
+                        <td>123-1</td>
+                        <td>Lunes</td>
+                        <td>14:00</td>
+                        <td>40</td>
+                        <td>25</td>
+                    </tr>
+
+                    <tr>
+                        <th>2</th>
+                        <td>456-3</td>
+                        <td>Miércoles</td>
+                        <td>16:00</td>
+                        <td>20</td>
+                        <td>10</td>
+                    </tr>
+                </tbody>
+            </table>
         </main>
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
