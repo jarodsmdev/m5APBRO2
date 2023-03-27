@@ -1,11 +1,17 @@
 
+
 document.addEventListener("DOMContentLoaded", function(){
+  
+function removeFadeOut( el, speed ) {
+    var seconds = speed/1000;
+    el.style.transition = "opacity "+seconds+"s ease";
 
-  setTimeout(function() {
-    document.querySelector('.alert').remove();
-  }, 5000); // La alerta se cerrará automáticamente después de 5 segundos (5000 milisegundos)
+    el.style.opacity = 0;
+    setTimeout(function() {
+        el.parentNode.removeChild(el);
+    }, speed);
+}
 
+removeFadeOut(document.querySelector('.alert'), 5000);
 })
-
-
 

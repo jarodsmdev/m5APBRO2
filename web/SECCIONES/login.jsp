@@ -10,18 +10,17 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-        <title>JSP Page</title>
+        <title>Login</title>
         <style>
 
         </style>
     </head>
     <body class="container">
-        <nav>
-            <%@include file="COMPONENTES/navbar.jsp" %>
-        </nav>
+
       </body>
       
-      <h1 class="text-center py-3">Login</h1>
+      <h1 class="text-center my-5 py-3">Login</h1>
+
 
       <% String mensajeError = request.getAttribute("mensajeError") != null ? request.getAttribute("mensajeError").toString() : ""; %>
 
@@ -33,12 +32,11 @@
       <% } %>
 
       
-
       <form action="${pageContext.request.contextPath}/SvLogin" method="POST">
 
         <div class="row justify-content-center">
           <div class="col-6">
-            <div class="form-floating mb-3">
+            <div class="form-floating my-3">
               <input type="text" class="form-control" placeholder="Introduce nombre" name="user">
                <label for="nombre">Usuario:</label>
             </div>
@@ -55,15 +53,13 @@
         </div>
 
       </form>
+      
 
-
-    <p class="text-center">¿No tiene una cuenta?, Contacta con el administrador de Sistemas.</p>
+    <p class="text-center my-5">¿No tiene una cuenta? Contacta con el administrador de Sistemas.</p>
         
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
         <script src="assets/js/main.js"></script>
       </body>
 
-    <footer class="py-3">
-        <%@include file="COMPONENTES/footer.jsp" %>
-    </footer>
+
 </html>
